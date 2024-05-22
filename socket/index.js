@@ -5,10 +5,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
-    origin: [
-      "https://e-commerce-system-for-agricultural-supplies.vercel.app",
-      "http://localhost:3000",
-    ],
+    origin: ["http://localhost:3000"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     preflightContinue: false,

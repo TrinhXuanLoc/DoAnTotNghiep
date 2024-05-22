@@ -29,7 +29,7 @@ function Adminproduct() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState([]);
-  const [category, setCategory] = useState(data.categories[0]._id);
+  const [category, setCategory] = useState(data?.categories[0]?._id || []);
   const [isLoading, setIsLoading] = useState(false);
   const [editProduct, setEditProduct] = useState({
     _id: "",

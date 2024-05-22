@@ -17,7 +17,6 @@ function CreateBlog() {
         content: content,
         selectedImage: selectedImage,
       };
-      console.log(blog);
       try {
         const res = await BlogService.createBlog(blog);
         if (res.success) {

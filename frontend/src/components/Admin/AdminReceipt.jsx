@@ -228,6 +228,7 @@ function AdminReceipt() {
       >
         <label className="flex justify-between items-center">
           <p className="w-[20%] font-[500]">Sản phẩm</p>
+
           <select
             value={addReceipt.productId}
             className="w-[80%] md:px-4  h-auto my-1 py-2 border-[2px] sm:px-0 rounded-[4px]"
@@ -235,6 +236,7 @@ function AdminReceipt() {
               setAddReceipt({ ...addReceipt, productId: e.target.value })
             }
           >
+            <option value="">Chọn sản phẩm</option>
             {data && data.length > 0
               ? data.map((item) => (
                   <option value={item._id} key={item._id}>

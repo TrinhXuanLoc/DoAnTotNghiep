@@ -65,6 +65,8 @@ function SeleteInbox({
       </div>
       <div className="px-3 h-[60vh]  overflow-y-scroll py-2" ref={bottomRef}>
         {messages?.map((item, index) => {
+          console.log(item)
+        
           return (
             <div
               key={index}
@@ -72,7 +74,7 @@ function SeleteInbox({
                 item.sender === sellerId ? "justify-end" : "justify-start"
               } `}
             >
-              {item.sender !== sellerId && (
+              {item.sender !== sellerId &&  (
                 <img
                   src={user?.avatar?.url}
                   alt=""
@@ -87,6 +89,7 @@ function SeleteInbox({
                       : "bg-[#0866ff] text-white"
                   }`}
                 >
+               
                   {item?.images && (
                     <img
                       src={item?.images?.url}

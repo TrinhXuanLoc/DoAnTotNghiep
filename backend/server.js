@@ -20,7 +20,7 @@ connectMONGO();
 
 //connect cloudinary
 cloudinary.config({
-  cloud_name: "dnicqkz3v",
+  cloud_name: "dqbbx4a3n",
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });

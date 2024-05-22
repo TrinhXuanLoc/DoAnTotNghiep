@@ -21,7 +21,7 @@ const createUser = catchAsyncErrors(async (req, res, next) => {
       phoneNumber: phoneNumber,
     };
     const activationToken = createActivationToken(user);
-    const activationUrl = `https://e-commerce-system-for-agricultural-supplies.vercel.app/activation/${activationToken}`;
+    const activationUrl = `${process.env.CLIENT_URL}/activation/${activationToken}`;
     try {
       await sendMail.sendMail({
         email: user.email,
@@ -91,7 +91,7 @@ const createAccountBussenes = catchAsyncErrors(async (req, res, next) => {
       tax: tax,
     };
     const activationToken = createActivationToken(user);
-    const activationUrl = `https://e-commerce-system-for-agricultural-supplies.vercel.app/activation/${activationToken}`;
+    const activationUrl = `${process.env.CLIENT_URL}/activation/${activationToken}`;
     try {
       await sendMail.sendMail({
         email: user.email,
@@ -379,7 +379,7 @@ const deleteAddress = catchAsyncErrors(async (req, res, next) => {
 
 const sendResetEmail = async (user) => {
   const resetToken = createResetToken(user);
-  const resetUrl = `https://e-commerce-system-for-agricultural-supplies.vercel.app/reset-password/${resetToken}`;
+  const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
 
   try {
     await sendMail.sendMail({

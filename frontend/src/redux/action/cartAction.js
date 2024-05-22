@@ -10,6 +10,7 @@ export const getDataCart = () => async (dispatch) => {
     });
   } catch (e) {
     dispatch({
+      type: Type.GET_DATA_CART,
       data: [],
     });
   }

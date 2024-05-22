@@ -31,6 +31,6 @@ export const deleteProduct = async (id) => {
 };
 
 export const reviewProduct = async (data) => {
-  const res = axios.post("/product/create-review", data);
+  const res = await axios.post("/product/create-review", data);
   return res.data;
 };

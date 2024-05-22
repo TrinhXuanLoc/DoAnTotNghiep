@@ -66,23 +66,25 @@ function Discount() {
   }, [dataProduct]);
   return (
     <div>
-      <div className=" p-6 rounded-lg   md:px-[10%]">
-        <div className=" flex justify-center text-center items-center">
-          <p className="  mt-4 mb-8 font-[700] md:text-[32px] text-[20px]  px-6 text-[#555555] ">
-            KHUYẾN MÃI
-          </p>
+      {dataSort?.length ? (
+        <div className=" p-6 rounded-lg   md:px-[10%]">
+          <div className=" flex justify-center text-center items-center">
+            <p className="  mt-4 mb-8 font-[700] md:text-[32px] text-[20px]  px-6 text-[#555555] ">
+              KHUYẾN MÃI
+            </p>
+          </div>
+          <div className="grid gap-[5px] mx-1 lg:grid-cols-5 md:grid-cols-3 grid-cols-2  md:gap-[10px]  lg:gap-[20px]  xl:gap-[30px]">
+            {dataSort && dataSort?.length !== 0 && (
+              <>
+                {dataSort &&
+                  dataSort?.map((i, index) => (
+                    <ProductCart key={index} item={i} />
+                  ))}
+              </>
+            )}
+          </div>
         </div>
-        <div className="grid gap-[5px] mx-1 lg:grid-cols-5 md:grid-cols-3 grid-cols-2  md:gap-[10px]  lg:gap-[20px]  xl:gap-[30px]">
-          {dataSort && dataSort?.length !== 0 && (
-            <>
-              {dataSort &&
-                dataSort?.map((i, index) => (
-                  <ProductCart key={index} item={i} />
-                ))}
-            </>
-          )}
-        </div>
-      </div>
+      ) : null}
     </div>
   );
 }

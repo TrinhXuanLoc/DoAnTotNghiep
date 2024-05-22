@@ -44,7 +44,7 @@ function InboxForm({
     <div className="fixed bottom-2 z-50 right-24 bg-white w-[280px] rounded fadeIn min-h-[48vh]">
       <div className="flex shadow  p-2">
         <img
-          src={listUser?.avatar.url}
+          src={listUser?.avatar?.url}
           alt=""
           className="w-[40px] h-[40px] object-cover rounded-full "
         />
@@ -66,7 +66,7 @@ function InboxForm({
             >
               {item.sender !== sellerId && (
                 <img
-                  src={listUser?.avatar.url}
+                  src={listUser?.avatar?.url}
                   alt=""
                   className="w-[30px] h-[30px] rounded-full mr-2"
                 />

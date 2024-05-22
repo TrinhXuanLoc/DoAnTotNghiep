@@ -251,6 +251,7 @@ function AdminCoupon() {
               setAddCoupons({ ...addCoupons, userType: e.target.value })
             }
           >
+            <option value="">Chọn đối tượng</option>
             <option value="user">User</option>
             <option value="Thành viên">Thành viên</option>
           </select>
@@ -308,6 +309,7 @@ function AdminCoupon() {
               setEditCoupons({ ...editCoupons, userType: e.target.value })
             }
           >
+            <option value="">Chọn đối tượng</option>
             <option value="user">User</option>
             <option value="Thành viên">Thành viên</option>
           </select>

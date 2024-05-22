@@ -1,11 +1,6 @@
-
 # E-COMMERCE-SYSTEM-FOR-AGRICULTURAL-SUPPLIES
 
-
 ## Authors
-
-- [@nhutruong61]((https://github.com/Nhuttruong61))
-
 
 ## Tech Stack
 
@@ -16,7 +11,6 @@
 **Database:** MongoDB
 
 **Clound-base:** Cloudinary
-
 
 ## Environment Variables
 
@@ -57,11 +51,3 @@ VNP_TMN_CODE=
 VNP_HASH_SECRET=
 
 VNP_API_URL=
-
-## Demo
-
-https://e-commerce-system-for-agricultural-supplies.vercel.app/
-
-## Account test
-email: user@gmail.com
-password: 123456

@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 
 export default function Forum() {
-  const { isAuthenticated } = useSelector((state) => state.user);
+  const { isAuthenticated, account } = useSelector((state) => state.user);
   const [dataQuetion, setDataQuetion] = useState(null);
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -153,7 +153,6 @@ export default function Forum() {
 
     setDataSort(sortedData);
   }, [optionSort, data]);
-
   return (
     <Loading isLoading={isLoading}>
       <div className="grid-cols-1 min-h-[100vh] bg-[#f4f1f4f4]">

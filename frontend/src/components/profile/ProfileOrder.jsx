@@ -26,6 +26,10 @@ function ProfileOrder() {
       dataIndex: "sst",
     },
     {
+      title: "Mã đơn",
+      dataIndex: "id",
+    },
+    {
       title: "Tên sản phẩm",
       dataIndex: "name",
     },
@@ -77,6 +81,7 @@ function ProfileOrder() {
         return {
           ...order,
           sst: index + 1,
+          id: order?._id?.slice(0, 8),
           name: order?.cart[0]?.name,
           quality: order?.cart?.length,
           payment: order?.paymentInfo?.type,

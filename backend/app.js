@@ -6,10 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const inittalRouter = require("./router");
 const corsOptions = {
-  origin: [
-    "https://e-commerce-system-for-agricultural-supplies.vercel.app",
-    "http://localhost:3000",
-  ],
+  origin: ["http://localhost:3000"],
   credentials: true,
   preflightContinue: false,
   optionsSuccessStatus: 204,

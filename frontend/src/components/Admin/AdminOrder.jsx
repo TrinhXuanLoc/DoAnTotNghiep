@@ -223,6 +223,10 @@ function AdminOrder() {
       dataIndex: "stt",
     },
     {
+      title: "Mã đơn",
+      dataIndex: "mdh",
+    },
+    {
       title: "Người dùng",
       dataIndex: "name",
       ...getColumnSearchProps("name"),
@@ -308,6 +312,7 @@ function AdminOrder() {
       return {
         key: order._id,
         id: order._id,
+        mdh: order._id?.slice(0, 8),
         stt: index + 1,
         name: order.user.name,
         phone: order.user.phoneNumber,
@@ -579,13 +584,19 @@ function AdminOrder() {
               <div className="flex justify-between">
                 <div>
                   <div className="flex">
-                    <p className="Text-[14px] pr-2">Tên:</p>
+                    <p className="text-[14px] pr-2 font-[500]">Mã đơn:</p>
+                    <p className="text-[50%] md:text-[100%] ">
+                      {dataExportAUser?.id}
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <p className="text-[14px] pr-2 font-[500]">Tên:</p>
                     <p className="text-[50%] md:text-[100%]">
                       {dataExportAUser?.name}
                     </p>
                   </div>
                   <div className="flex">
-                    <p className="Text-[14px] pr-2">Điện thoại:</p>
+                    <p className="Text-[14px] pr-2 font-[500]">Điện thoại:</p>
                     <p className="text-[50%] md:text-[100%]">
                       {dataExportAUser?.phone}
                     </p>

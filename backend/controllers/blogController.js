@@ -38,6 +38,7 @@ const getAllBlog = catchAsyncErrors(async (req, res, next) => {
       title: item.title,
       images: item.images,
       content: item.content.toString("utf-8"),
+      createdAt: item.createdAt,
     }));
     res.status(200).json({
       success: true,

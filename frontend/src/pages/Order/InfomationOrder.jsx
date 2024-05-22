@@ -91,7 +91,8 @@ function InfomationOrder() {
         cart: orders.cart,
       };
       const res = await ProductService.reviewProduct(review);
-      if (res.success) {
+      console.log(res);
+      if (res?.success) {
         dispatch(getAllProductRd());
         toast.success("Đánh giá thành công");
         getOrder();

@@ -8,7 +8,7 @@ import * as MessageService from "../../service/messageService";
 import imageCompression from "browser-image-compression";
 import InboxForm from "./InboxForm";
 import Swal from "sweetalert2";
-const ENDPOINT = "https://server-chat-ecommerce.onrender.com/";
+const ENDPOINT = "http://localhost:8000/";
 const socketId = socketIO(ENDPOINT, {
   transport: ["websocket"],
   withCredentials: true,
@@ -139,9 +139,9 @@ function Inbox() {
       });
     } else {
       const message = {
-        groupTitle: account._id + "64ed97e2a41b317df2d04bbf",
+        groupTitle: account._id + "661621b2855ea5a5b2fc6386",
         userId: account._id,
-        AdminId: "64ed97e2a41b317df2d04bbf",
+        AdminId: "661621b2855ea5a5b2fc6386",
       };
 
       const res = await ConventionService.createConversation(message);
@@ -155,26 +155,27 @@ function Inbox() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-
   return (
     <div className="">
-      <div className="fixed bottom-10 z-30 right-5 ">
-        {isModalOpen ? (
-          <div
-            className="cursor-pointer border rounded-full p-2 bg-[#009b49]"
-            onClick={handleCloseModal}
-          >
-            <AiOutlineClose className="text-[42px] text-white fadeIn" />
-          </div>
-        ) : (
-          <div
-            className="cursor-pointer border rounded-full p-2 bg-[#009b49]"
-            onClick={handleMessageSubmit}
-          >
-            <AiOutlineMessage className="text-[42px] text-white fadeIn" />
-          </div>
-        )}
-      </div>
+      {account?.role !== "admin" && (
+        <div className="fixed bottom-10 z-30 right-5 ">
+          {isModalOpen ? (
+            <div
+              className="cursor-pointer border rounded-full p-2 bg-[#009b49]"
+              onClick={handleCloseModal}
+            >
+              <AiOutlineClose className="text-[42px] text-white fadeIn" />
+            </div>
+          ) : (
+            <div
+              className="cursor-pointer border rounded-full p-2 bg-[#009b49]"
+              onClick={handleMessageSubmit}
+            >
+              <AiOutlineMessage className="text-[42px] text-white fadeIn" />
+            </div>
+          )}
+        </div>
+      )}
       {isModalOpen && (
         <InboxForm
           newMessage={newMessage}

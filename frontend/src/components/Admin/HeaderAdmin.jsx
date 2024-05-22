@@ -16,7 +16,7 @@ function HeaderAdmin() {
         <div className="flex items-center ">
           <img
             className="w-[40px] h-[40px] object-cover rounded-full"
-            src={user.account.avatar.url}
+            src={user?.account?.avatar?.url}
             alt=""
           />
         </div>

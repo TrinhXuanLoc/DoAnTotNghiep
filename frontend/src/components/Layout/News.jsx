@@ -28,7 +28,6 @@ function News() {
   useEffect(() => {
     fetchBlog();
   }, []);
-  console.log(dataBog);
   return (
     <div className=" flex justify-center text-center items-center flex-col md:px-[10%] py-2">
       <p className="   mt-4 mb-8 font-[700] md:text-[32px] text-[20px]  px-6 text-[#555555] ">

@@ -7,8 +7,7 @@ const cloudinary = require("cloudinary");
 const createQuestion = catchAsyncErrors(async (req, res, next) => {
   try {
     const { title, content, images } = req.body;
-
-    const userId = await User.findById(req.user._id);
+    const userId = await User.findById(req.user.id);
     let question;
 
     if (images.length > 0) {
@@ -96,7 +95,7 @@ const editQuestionUser = catchAsyncErrors(async (req, res, next) => {
     if (!question) {
       return next(new ErrorHandler("Question not found", 404));
     }
-    if (question.author._id.toString() !== req.user._id.toString()) {
+    if (question.author._id.toString() !== req.user.id.toString()) {
       return next(
         new ErrorHandler(
           "You do not have permission to edit this question",
@@ -145,7 +144,7 @@ const deleteQuestionUser = catchAsyncErrors(async (req, res, next) => {
     if (!question) {
       return next(new ErrorHandler("Question not found", 404));
     }
-    if (question.author._id.toString() !== req.user._id.toString()) {
+    if (question.author._id.toString() !== req.user.id.toString()) {
       return next(
         new ErrorHandler(
           "You do not have permission to edit this question",
@@ -244,7 +243,7 @@ const editComment = catchAsyncErrors(async (req, res, next) => {
     if (!comment) {
       return next(new ErrorHandler("Comment not found", 404));
     }
-    if (comment.author._id.toString() !== req.user._id.toString()) {
+    if (comment.author._id.toString() !== req.user.id.toString()) {
       return next(
         new ErrorHandler("You do not have permission to edit this comment", 403)
       );
